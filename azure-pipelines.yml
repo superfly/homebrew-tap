@@ -1,0 +1,15 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'macOS-10.13'
+
+steps:
+- bash: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  displayName: 'Install homebrew'
+- bash: brew tap superfly/brew
+  displayName: 'superfly tap'
+- bash: brew install superfly/brew/fly
+  displayName: 'install fly cli'
+- bash: fly --version
+  displayName: 'test fly'
