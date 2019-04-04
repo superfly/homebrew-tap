@@ -16,6 +16,7 @@ echo "  SHA: $SHA"
 
 sed -i "s~url \".*\"~url \"${URL}\"~" "Formula/fly.rb"
 sed -i "s~sha256 \".*\"~sha256 \"${SHA}\"~" "Formula/fly.rb"
+sed -i "s~version \".*\"~version \"${VERSION}\"~" "Formula/fly.rb"
 
 if [[ -n $(git status -s) ]]; then
   git add Formula/fly.rb
