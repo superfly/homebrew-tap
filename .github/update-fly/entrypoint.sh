@@ -4,7 +4,7 @@ set -ex
 
 mkdir -p ./tmp
 
-curl "https://flyio-cli-assets.sfo2.digitaloceanspaces.com/tarballs/stable/darwin-x64" > tmp/manifest.json
+curl "https://get.fly.io/tarballs/stable/darwin-x64" > tmp/manifest.json
 URL=$(node -p "require('./tmp/manifest.json').gz")
 SHA=$(node -p "require('./tmp/manifest.json').sha256gz")
 VERSION=$(node -p "require('./tmp/manifest.json').version")
