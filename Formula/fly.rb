@@ -1,9 +1,9 @@
 class Fly < Formula
   desc "fly cli"
   homepage "https://fly.io"
-  url "https://flyio-cli-assets.sfo2.digitaloceanspaces.com/tarballs/stable/fly-v0.51.0/fly-v0.51.0-darwin-x64.tar.gz"
-  sha256 "d5d9b1037a446d70213e02ba438e5f4aaa37b8bdc9535ba6bca8dc276155d57d"
-  version "0.51.0"
+  url "https://get.fly.io/tarballs/stable/fly-v0.51.1/fly-v0.51.1-darwin-x64.tar.gz"
+  sha256 "1c1ffe6bb41a1a65d9b2eb42ac79bd730f7bdff5eecd8ffff1f3f3a440a96fec"
+  version "0.51.1"
 
   def install
     inreplace "bin/fly", /^CLIENT_HOME=/, "export FLY_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
