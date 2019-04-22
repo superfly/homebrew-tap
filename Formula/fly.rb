@@ -2,7 +2,7 @@ class Fly < Formula
   desc "fly cli"
   homepage "https://fly.io"
   url "https://get.fly.io/tarballs/stable/fly-v0.52.0/fly-v0.52.0-darwin-x64.tar.gz"
-  sha256 "861aacf7bff3a49c2ec7e74ae77ec503f52b7886b81af52578abdc84a60de9a6"
+  sha256 "fad5249ce6da5b746529877094e808457572b4515013430d33e260dfcb8d051d"
   version "0.52.0"
 
   def install
