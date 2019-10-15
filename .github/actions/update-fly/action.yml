@@ -1,0 +1,5 @@
+name: "Update Fly"
+description: "Update fly cli"
+runs:
+  using: "docker"
+  image: "Dockerfile"
