@@ -21,7 +21,7 @@ sed -i "s~version \".*\"~version \"${VERSION}\"~" "Formula/fly.rb"
 if [[ -n $(git status -s) ]]; then
   git add Formula/fly.rb
 
-  sh -c "git remote add github 'https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git'
+  sh -c "git remote add github 'https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git' \
         && git config --global user.name 'Flybot' \
         && git config --global user.email 'bot@fly.io' \
         && git commit -m 'fly v$VERSION' \
