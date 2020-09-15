@@ -17,7 +17,7 @@ class Flyctl < Formula
 
   def install
     bin.install "flyctl"
-    bin.install_symlink "flyctl" => "flyctl"
+    bin.install_symlink "flyctl" => "fly"
   end
 
   test do
