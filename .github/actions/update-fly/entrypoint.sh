@@ -19,7 +19,7 @@ sed -i "s~sha256 \".*\"~sha256 \"${SHA}\"~" "Formula/flyjs.rb"
 sed -i "s~version \".*\"~version \"${VERSION}\"~" "Formula/flyjs.rb"
 
 if [[ -n $(git status -s) ]]; then
-  git add Formula/fly.rb
+  git add Formula/flyjs.rb
 
   sh -c "git remote add github 'https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git' \
         && git config --global user.name 'Flybot' \
