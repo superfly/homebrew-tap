@@ -1,5 +1,5 @@
 name: Update fly
-on: repository_dispatch
+on: [repository_dispatch, workflow_dispatch]
 
 jobs:
   update:
