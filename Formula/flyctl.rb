@@ -2,16 +2,16 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.0.154"
+  version "0.0.155"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/superfly/flyctl/releases/download/v0.0.154/flyctl_0.0.154_macOS_x86_64.tar.gz"
-    sha256 "58da9f77decb43cefb2dd6c12ab37c0af3d4e331c1922327e2617998139c84c8"
+    url "https://github.com/superfly/flyctl/releases/download/v0.0.155/flyctl_0.0.155_macOS_x86_64.tar.gz"
+    sha256 "2ac589a2440e5397fde63a31f497505517b347673605b4d22cc3f8ce0825f31a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/superfly/flyctl/releases/download/v0.0.154/flyctl_0.0.154_Linux_x86_64.tar.gz"
-    sha256 "fe1294b09aa8b87c220c3b3ae1520051016432bbf657993a4618612ad123b7aa"
+    url "https://github.com/superfly/flyctl/releases/download/v0.0.155/flyctl_0.0.155_Linux_x86_64.tar.gz"
+    sha256 "2f9eafa31e8a4181862bcf88e1def8e4d98b42f0d540eb13e5d3600d8ee4bbb2"
   end
 
   def install
