@@ -5,24 +5,29 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.0.220"
+  version "0.0.222"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/superfly/flyctl/releases/download/v0.0.220/flyctl_0.0.220_macOS_x86_64.tar.gz"
-    sha256 "cd39f501a51dd3a0bc55e397aa6f5923715bb436b1ca762e0a79e35287871ace"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.222/flyctl_0.0.222_macOS_x86_64.tar.gz"
+      sha256 "b44e8ac4a40b74cd0faadb52e51e7bc6d45c77ce73875b7e940e854bab301e6e"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.222/flyctl_0.0.222_macOS_arm64.tar.gz"
+      sha256 "7989a26a52ac6f93cf9d876731e3350378d2273ba703986ed46b9f8444fd07f1"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/superfly/flyctl/releases/download/v0.0.220/flyctl_0.0.220_macOS_arm64.tar.gz"
-    sha256 "ee144cd5d83301e788cd735572ff32d31f5fd62acbc9aa20ad3b0380090b848c"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/superfly/flyctl/releases/download/v0.0.220/flyctl_0.0.220_Linux_x86_64.tar.gz"
-    sha256 "d468dbba5e5b72926839a998bcbda0ec93006e18f9be51137e29c57e6eea979e"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/superfly/flyctl/releases/download/v0.0.220/flyctl_0.0.220_Linux_arm64.tar.gz"
-    sha256 "8784644525f1dab8fe0cc51a334f909766a0a1ed55583eca67f00da541a9609c"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.222/flyctl_0.0.222_Linux_x86_64.tar.gz"
+      sha256 "ade7f1f7807487b9d8a06ba4d1475df2aa122ffd47632127b074edddd844f710"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.222/flyctl_0.0.222_Linux_arm64.tar.gz"
+      sha256 "0761b15b1a1528a1875c2d550e0142905d32d41fd44d2a09a54535d435ee6692"
+    end
   end
 
   def install
