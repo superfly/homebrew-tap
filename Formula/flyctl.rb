@@ -31,7 +31,7 @@ class Flyctl < Formula
   end
 
   def install
-    system "pkill", "flyctl"
+    system "pkill flyctl || exit 0"
     bin.install "flyctl"
     bin.install_symlink "flyctl" => "fly"
   end
