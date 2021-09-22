@@ -5,28 +5,28 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.0.240"
+  version "0.0.241"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.240/flyctl_0.0.240_macOS_x86_64.tar.gz"
-      sha256 "7f5938a5c494a73cf20a6853a76f555df9f0eee3252ca740de915b860bb37467"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.241/flyctl_0.0.241_macOS_x86_64.tar.gz"
+      sha256 "4c84d4802dc2f7e8f0cd5672c5c4dacabd1f3e9b6f8f31821d3f83d396a99dec"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.240/flyctl_0.0.240_macOS_arm64.tar.gz"
-      sha256 "405fd135f5ddffb2569eae8ea80705752f94e4a1d98bcdece9296ec4dff23994"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.241/flyctl_0.0.241_macOS_arm64.tar.gz"
+      sha256 "8025a3f415f169e3206152156793f4902853adc7c3049c0f7e26dd314f679d5c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.240/flyctl_0.0.240_Linux_x86_64.tar.gz"
-      sha256 "34e539e22a340c3e6911c90e6eb0b691dfdbf056897cf22edae92467644e66e4"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.241/flyctl_0.0.241_Linux_x86_64.tar.gz"
+      sha256 "a4a58a454b6739531fd6f1f5e8a17fbea5f96d4c9a8b42b2dd30e4b3285036ce"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.240/flyctl_0.0.240_Linux_arm64.tar.gz"
-      sha256 "888a3e63daf64afda6fa185ea58256df1121d238fca71215f70fbada6ff6d561"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.241/flyctl_0.0.241_Linux_arm64.tar.gz"
+      sha256 "adaec64fba5c829a4259431500f1281ff0e0a6efb928c0dadd5d4d0ba9c883e0"
     end
   end
 
