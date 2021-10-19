@@ -6,7 +6,6 @@ class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
   version "0.0.248"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?
