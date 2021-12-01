@@ -5,46 +5,74 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.0.256"
+  version "0.0.258"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.256/flyctl_0.0.256_macOS_x86_64.tar.gz"
-      sha256 "1afcf7c85596ff79507250b050034f35033a35fdcccbcfa65f18f83956515260"
+    if Hardware::CPU.arm?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.258/flyctl_0.0.258_macOS_arm64.tar.gz"
+      sha256 "35453d89857446ef11c2829159a8d862c79d30add9cdc42bc03380eeff6b42ab"
 
       def install
         bin.install "flyctl"
         bin.install_symlink "flyctl" => "fly"
+
+        bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
+        (bash_completion/"flyctl").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
+        (zsh_completion/"_flyctl").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
+        (fish_completion/"flyctl.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.256/flyctl_0.0.256_macOS_arm64.tar.gz"
-      sha256 "e8ac18af903acad7e49beedb5f48eff22ec60b9f7c2136b2279f645829658cfa"
+    if Hardware::CPU.intel?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.258/flyctl_0.0.258_macOS_x86_64.tar.gz"
+      sha256 "e22f6f89e10208a5fa36b2f7c4499efe75a7bf8f7001c7da7554ff33d74e1dda"
 
       def install
         bin.install "flyctl"
         bin.install_symlink "flyctl" => "fly"
+
+        bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
+        (bash_completion/"flyctl").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
+        (zsh_completion/"_flyctl").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
+        (fish_completion/"flyctl.fish").write fish_output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.256/flyctl_0.0.256_Linux_arm64.tar.gz"
-      sha256 "1434ef8f075deaf3ac76d5fde6798ccb67d5f7d9135fc4b365695f911b21272e"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.258/flyctl_0.0.258_Linux_arm64.tar.gz"
+      sha256 "23143cca5ed93b2b2b5d5fc3b9c3f3bea8581e67d4721659c6e76abae2d72087"
 
       def install
         bin.install "flyctl"
         bin.install_symlink "flyctl" => "fly"
+
+        bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
+        (bash_completion/"flyctl").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
+        (zsh_completion/"_flyctl").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
+        (fish_completion/"flyctl.fish").write fish_output
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.256/flyctl_0.0.256_Linux_x86_64.tar.gz"
-      sha256 "7aa8932528014400c5abd70fe209d8bd5c3605d86c44687c19196b92dc4e3c06"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.258/flyctl_0.0.258_Linux_x86_64.tar.gz"
+      sha256 "df1836b4ebd45ddb9b62265f2be07f5f7dbbe6945099863bb5c71de25656c14f"
 
       def install
         bin.install "flyctl"
         bin.install_symlink "flyctl" => "fly"
+
+        bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
+        (bash_completion/"flyctl").write bash_output
+        zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
+        (zsh_completion/"_flyctl").write zsh_output
+        fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
+        (fish_completion/"flyctl.fish").write fish_output
       end
     end
   end
