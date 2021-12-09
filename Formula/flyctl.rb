@@ -5,12 +5,12 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.0.263"
+  version "0.0.264"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.263/flyctl_0.0.263_macOS_x86_64.tar.gz"
-      sha256 "da19136ab54d64f1f19b3839ab03b74431ac49086219e4b32cf13b155140ab1f"
+    if Hardware::CPU.arm?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.264/flyctl_0.0.264_macOS_arm64.tar.gz"
+      sha256 "42006aa987546c50ecc53609a57e724360935519f2e6b6902a6c09b2f3394b71"
 
       def install
         bin.install "flyctl"
@@ -24,9 +24,9 @@ class Flyctl < Formula
         (fish_completion/"flyctl.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.263/flyctl_0.0.263_macOS_arm64.tar.gz"
-      sha256 "28cc1179a2c6e75a6fbec9662d8327e2f266a770719c423fdcb820f05e64c63b"
+    if Hardware::CPU.intel?
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.264/flyctl_0.0.264_macOS_x86_64.tar.gz"
+      sha256 "d5692c51bc1f6103bf6216f5cab9bbc8b3fab7914e8491e60e46aca03fa1ca43"
 
       def install
         bin.install "flyctl"
@@ -44,8 +44,8 @@ class Flyctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.263/flyctl_0.0.263_Linux_arm64.tar.gz"
-      sha256 "37e636a36925a1f9ced28c76a851bdfe851541717190465d3756b0aef4a43f40"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.264/flyctl_0.0.264_Linux_arm64.tar.gz"
+      sha256 "2454937798cda10f757c889e244c7116f42535e08fbba45a43f2b5c0302c4106"
 
       def install
         bin.install "flyctl"
@@ -60,8 +60,8 @@ class Flyctl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.0.263/flyctl_0.0.263_Linux_x86_64.tar.gz"
-      sha256 "d3b1b486a77765b6ac997bc279a9355a7a9babe54cc99a8e4f67ec040d499b75"
+      url "https://github.com/superfly/flyctl/releases/download/v0.0.264/flyctl_0.0.264_Linux_x86_64.tar.gz"
+      sha256 "f0b69b2641481a29e81b7defe5b2e9a246e4efe5fbfdd294bcb6b9012049f45c"
 
       def install
         bin.install "flyctl"
