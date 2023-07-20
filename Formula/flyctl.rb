@@ -5,12 +5,12 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.1.61"
+  version "0.1.62"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.1.61/flyctl_0.1.61_macOS_x86_64.tar.gz"
-      sha256 "77abe6f250f647e3e68346077b7bbe5e927478fd317022cda2375ab01a41d27a"
+      url "https://github.com/superfly/flyctl/releases/download/v0.1.62/flyctl_0.1.62_macOS_x86_64.tar.gz"
+      sha256 "e0ef4cb9f47598e2c49633f223c64a5ad110fd8dcfb81e611fe3a3768386d559"
 
       def install
         bin.install "flyctl"
@@ -25,8 +25,8 @@ class Flyctl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/superfly/flyctl/releases/download/v0.1.61/flyctl_0.1.61_macOS_arm64.tar.gz"
-      sha256 "ad04fcb61d53637554a446b3600b4ee2174e409423b41fe1178d4547ac5fd0dd"
+      url "https://github.com/superfly/flyctl/releases/download/v0.1.62/flyctl_0.1.62_macOS_arm64.tar.gz"
+      sha256 "fe9a1d3f464ff3065bf4cc423c2156df29806841e2db4bcd33bfba80656f5334"
 
       def install
         bin.install "flyctl"
@@ -44,8 +44,8 @@ class Flyctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/superfly/flyctl/releases/download/v0.1.61/flyctl_0.1.61_Linux_arm64.tar.gz"
-      sha256 "7b561d1adf5a4e8627c4f855cddd3ff4442f3ae4731fe22946ba2723fc950232"
+      url "https://github.com/superfly/flyctl/releases/download/v0.1.62/flyctl_0.1.62_Linux_arm64.tar.gz"
+      sha256 "873167c683958c028f014858424fd4ffa90a39b4673d91c7a505e3cc22a7be16"
 
       def install
         bin.install "flyctl"
@@ -60,8 +60,8 @@ class Flyctl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.1.61/flyctl_0.1.61_Linux_x86_64.tar.gz"
-      sha256 "a6c45425f832ff81af19d8bac9b4f9f232f3f82491abb83fe1197346c963f841"
+      url "https://github.com/superfly/flyctl/releases/download/v0.1.62/flyctl_0.1.62_Linux_x86_64.tar.gz"
+      sha256 "9652174c0316b657d9baa82cd9742c637bdcfea282f0e8c80851c690396bce2f"
 
       def install
         bin.install "flyctl"
