@@ -5,12 +5,12 @@
 class Flyctl < Formula
   desc ""
   homepage "https://fly.io"
-  version "0.2.52"
+  version "0.2.53"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.2.52/flyctl_0.2.52_macOS_x86_64.tar.gz"
-      sha256 "fddab3873a9c2356bbad768afb100472b920148ea445700787ecc7d35c9306d9"
+    on_intel do
+      url "https://github.com/superfly/flyctl/releases/download/v0.2.53/flyctl_0.2.53_macOS_x86_64.tar.gz"
+      sha256 "b74ccceeb42e9c6adc8ef43e267b8ea0f93c53988f3a0abb5003cd32eefce83c"
 
       def install
         bin.install "flyctl"
@@ -24,9 +24,9 @@ class Flyctl < Formula
         (fish_completion/"flyctl.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/superfly/flyctl/releases/download/v0.2.52/flyctl_0.2.52_macOS_arm64.tar.gz"
-      sha256 "91887e2d8f590e544f31478f670efe925582e7eb67a4d38951a0646dfe665851"
+    on_arm do
+      url "https://github.com/superfly/flyctl/releases/download/v0.2.53/flyctl_0.2.53_macOS_arm64.tar.gz"
+      sha256 "19fc2dc033c2a4e6602f399de0bcd8b78827d2bc7ae892f00f63882cb071325a"
 
       def install
         bin.install "flyctl"
@@ -43,36 +43,40 @@ class Flyctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/superfly/flyctl/releases/download/v0.2.52/flyctl_0.2.52_Linux_x86_64.tar.gz"
-      sha256 "4e998dab05f80fa418de9ddcaed3cfe80ebd596e1f8437275f4bb0ebc63826f1"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/superfly/flyctl/releases/download/v0.2.53/flyctl_0.2.53_Linux_x86_64.tar.gz"
+        sha256 "d5ea89e2f745bf3128a264da8fd1a692de12f0344e11bd7a2de44aada9826cd6"
 
-      def install
-        bin.install "flyctl"
-        bin.install_symlink "flyctl" => "fly"
+        def install
+          bin.install "flyctl"
+          bin.install_symlink "flyctl" => "fly"
 
-        bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
-        (bash_completion/"flyctl").write bash_output
-        zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
-        (zsh_completion/"_flyctl").write zsh_output
-        fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
-        (fish_completion/"flyctl.fish").write fish_output
+          bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
+          (bash_completion/"flyctl").write bash_output
+          zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
+          (zsh_completion/"_flyctl").write zsh_output
+          fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
+          (fish_completion/"flyctl.fish").write fish_output
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/superfly/flyctl/releases/download/v0.2.52/flyctl_0.2.52_Linux_arm64.tar.gz"
-      sha256 "3269b7d085b318abe102ff1eeeabe0c70f8b20953f38b9444a556bcdbfac2036"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/superfly/flyctl/releases/download/v0.2.53/flyctl_0.2.53_Linux_arm64.tar.gz"
+        sha256 "864c69c46efc7fcc98a1c0d24c37c919aafc2d44d66274e8dee55bd6b407d32b"
 
-      def install
-        bin.install "flyctl"
-        bin.install_symlink "flyctl" => "fly"
+        def install
+          bin.install "flyctl"
+          bin.install_symlink "flyctl" => "fly"
 
-        bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
-        (bash_completion/"flyctl").write bash_output
-        zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
-        (zsh_completion/"_flyctl").write zsh_output
-        fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
-        (fish_completion/"flyctl.fish").write fish_output
+          bash_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "bash")
+          (bash_completion/"flyctl").write bash_output
+          zsh_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "zsh")
+          (zsh_completion/"_flyctl").write zsh_output
+          fish_output = Utils.safe_popen_read("#{bin}/flyctl", "completion", "fish")
+          (fish_completion/"flyctl.fish").write fish_output
+        end
       end
     end
   end
